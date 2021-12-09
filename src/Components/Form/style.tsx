@@ -63,3 +63,14 @@ export const Input = styled.input`
     left: 5px;
   }
 `;
+
+export const ErrorImage = styled.img`
+  position: absolute;
+  top: 150px;
+  left: 2px;
+  width: 160px;
+
+  @media screen and (min-width: 509px) {
+    width: 230px;
+  }
+`;
