@@ -1,10 +1,13 @@
 import React from "react";
 import Login from "./Pages/Login";
+import GlobalStyle from "./Style/global";
+
 function App() {
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <Login />
-    </div>
+    </>
   );
 }
 
