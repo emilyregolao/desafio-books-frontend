@@ -4,8 +4,11 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormData } from "../../Interfaces";
+import { useUser } from "../../Providers/UserProvider";
 
 const LoginForm = () => {
+  const { login } = useUser();
+
   const formSchema = yup.object().shape({
     email: yup.string().email().required("Email e/ou senha inválidos."),
     password: yup.string().required("Email e/ou senha inválidos."),
@@ -18,8 +21,8 @@ const LoginForm = () => {
   } = useForm<FormData>({ resolver: yupResolver(formSchema) });
 
   const handleLogin = ({ email, password }: FormData) => {
-    console.log(email);
-    console.log(password);
+    const loginData = { email: email, password: password };
+    login(loginData);
   };
 
   return (

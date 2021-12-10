@@ -14,7 +14,14 @@ export const UserProvider = ({ children }: ProvidersType) => {
   const login = (data: FormData) => {
     api
       .post("/auth/sign-in", data)
-      .then((response) => console.log(response))
+      .then((response) => {
+        localStorage.setItem(
+          "Books@token",
+          JSON.stringify(response.headers.authorization)
+        );
+
+        history.push("/dashboard");
+      })
       .catch((error) => console.log(error));
   };
 
