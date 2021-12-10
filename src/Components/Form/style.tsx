@@ -53,14 +53,18 @@ export const Input = styled.input`
   margin: 6px auto;
   background: rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(2px);
+  color: #ffffff;
+  font-size: 18px;
+  padding-left: 15px;
 
   &&::placeholder {
     font-family: Heebo;
     color: #ffffff;
+    font-size: 14px;
     opacity: 0.5;
     position: relative;
     bottom: 10px;
-    left: 5px;
+    left: 10px;
   }
 `;
 

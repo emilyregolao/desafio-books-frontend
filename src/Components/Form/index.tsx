@@ -3,7 +3,7 @@ import ErrorMessage from "../../Assets/Images/erro.png";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormData } from "../../Interfaces/indes";
+import { FormData } from "../../Interfaces";
 
 const LoginForm = () => {
   const formSchema = yup.object().shape({

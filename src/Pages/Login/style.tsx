@@ -13,7 +13,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media screen and (min-width: 426px) {
+  @media screen and (min-width: 450px) {
     background-image: url(${DesktopBackground});
   }
 `;
