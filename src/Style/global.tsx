@@ -9,6 +9,7 @@ fieldset, form, label {
 	padding: 0;
 	border: 0;
 	font-family: Heebo;
+	color: #333333;
 }
 body{
 	width: 100vw;
@@ -16,6 +17,12 @@ body{
 }
 ul, ol{
 	list-style: none;
+}
+h1{
+	font-weight: 300;
+	font-style: normal;
+	font-size: 28px;
+
 }
 button{
 	cursor: pointer;

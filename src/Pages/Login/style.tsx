@@ -40,10 +40,6 @@ export const LogoImage = styled.img`
 `;
 
 export const Title = styled.h1`
-  font-family: Heebo;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 28px;
   color: #ffffff;
   position: absolute;
   left: 130px;
