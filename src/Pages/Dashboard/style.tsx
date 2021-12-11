@@ -4,37 +4,52 @@ import DesktopBackground from "../../Assets/Images/desktop-dashboard-bg.png";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-size: cover;
   background: url(${MobileBackground});
+  padding-bottom: 50px;
 
   @media screen and (min-width: 520px) {
-    background: url(${DesktopBackground});
+    background-size: cover;
+    background: url(${DesktopBackground}) no-repeat;
+    background-attachment: fixed;
   }
 `;
 
 export const Header = styled.div`
   position: relative;
-  top: 20px;
   display: flex;
-  width: 100%;
-  margin-bottom: 50px;
+  justify-content: space-between;
+  padding: 20px 4%;
+  .logo {
+    display: flex;
+  }
+  .greeting {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 0;
+  }
+  .greeting-desktop {
+    display: none;
+  }
 
   @media screen and (min-width: 569px) {
-    left: 130px;
+    .greeting-desktop {
+      display: flex;
+    }
+    span p {
+      margin: 0px 3px;
+    }
+    .name {
+      font-weight: 500;
+    }
   }
 `;
 
 export const Logout = styled.button`
   border: none;
   background-color: transparent;
-  position: absolute;
-  right: 20px;
-  top: 2px;
-
-  @media screen and (min-width: 569px) {
-    right: 270px;
-  }
 `;
 
 export const LogoImage = styled.img`
@@ -44,14 +59,39 @@ export const LogoImage = styled.img`
 `;
 
 export const BooksList = styled.ul`
-  width: 80%;
+  width: fit-content;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
+  justify-content: center;
   @media screen and (min-width: 569px) {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    margin: 0px 5px;
+  }
+  p {
+    margin: 0px 5px;
+  }
+
+  @media screen and (min-width: 520px) {
+    justify-content: flex-end;
+    margin-right: 55px;
+    p {
+      order: -1;
+    }
   }
 `;

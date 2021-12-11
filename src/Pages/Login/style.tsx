@@ -3,7 +3,7 @@ import DesktopBackground from "../../Assets/Images/desktop-bg.png";
 import MobileBackground from "../../Assets/Images/mobile-bg.png";
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;

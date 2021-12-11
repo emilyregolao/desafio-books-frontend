@@ -6,6 +6,7 @@ export interface ProvidersType {
 
 export interface UserProviderTypes {
   token: string;
+  name: string;
   login: (data: FormData) => void;
   logout: () => void;
 }
@@ -17,12 +18,18 @@ export interface FormData {
 
 export interface BooksProviderTypes {
   books: Book[];
-  getBooks: () => void;
   page: number;
+  nextPage: () => void;
+  backPage: () => void;
 }
 
 export interface BookCardType {
   book: Book;
+}
+
+export interface BookDetailType {
+  book: Book;
+  closeModal: () => void;
 }
 
 export interface Book {

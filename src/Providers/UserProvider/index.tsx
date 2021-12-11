@@ -9,17 +9,19 @@ export const UserProvider = ({ children }: ProvidersType) => {
   const [token, setToken] = useState(
     () => localStorage.getItem("Books@token") || ""
   );
+  const [name, setName] = useState(
+    () => localStorage.getItem("Books@user") || ""
+  );
   const history = useHistory();
 
   const login = (data: FormData) => {
     api
       .post("/auth/sign-in", data)
       .then((response) => {
-        localStorage.setItem(
-          "Books@token",
-          JSON.stringify(response.headers.authorization)
-        );
-
+        localStorage.setItem("Books@token", response.headers.authorization);
+        localStorage.setItem("Books@user", response.data.name);
+        setToken(response.headers.authorization);
+        setName(response.data.name);
         history.push("/dashboard");
       })
       .catch((error) => console.log(error));
@@ -27,12 +29,13 @@ export const UserProvider = ({ children }: ProvidersType) => {
 
   const logout = () => {
     setToken("");
+    setName("");
     localStorage.clear();
     history.push("/");
   };
 
   return (
-    <UserContext.Provider value={{ token, login, logout }}>
+    <UserContext.Provider value={{ token, name, login, logout }}>
       {children}
     </UserContext.Provider>
   );

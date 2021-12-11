@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const Card = styled.li`
   cursor: pointer;
-  width: 80%;
-  min-width: 280px;
-  max-width: 300px;
-  height: 150px;
+  width: 272px;
+  height: 160px;
   padding: 10px;
   background-color: #ffffff;
   box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
   border-radius: 4px;
-  margin: 10px auto;
+  margin: 10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,6 +18,10 @@ export const Card = styled.li`
     transition: ease all 0.3s;
     box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.5);
     border-radius: 10px;
+  }
+
+  @media screen and (min-width: 769px) {
+    margin: 10px;
   }
 `;
 

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { ProvidersType, BooksProviderTypes } from "../../Interfaces";
 import api from "../../Services/api";
 import { useUser } from "../UserProvider";
@@ -13,19 +13,34 @@ export const BooksProvider = ({ children }: ProvidersType) => {
 
   const { token } = useUser();
 
-  const getBooks = () => {
-    api
-      .get(`books?page=${page}&amount=12`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
+  const nextPage = () => {
+    if (page <= 41) {
+      setPage(page + 1);
+    }
   };
 
+  const backPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  useEffect(() => {
+    api
+      .get("/books", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: { page: `${page.toString()}`, amount: "12" },
+      })
+      .then((response) => {
+        setBooks(response.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, [page]);
+
   return (
-    <BooksContext.Provider value={{ books, getBooks, page }}>
+    <BooksContext.Provider value={{ books, page, nextPage, backPage }}>
       {children}
     </BooksContext.Provider>
   );

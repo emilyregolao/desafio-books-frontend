@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-html, body, div, span,
+body, div, span,
 h1, h2, h3, h4, h5, h6, p, img, ol, ul, li,
 fieldset, form, label {
 	margin: 0;
@@ -12,7 +12,7 @@ fieldset, form, label {
 	color: #333333;
 }
 body{
-	width: 100vw;
+	width: 100%;
 	height: 100%;
 }
 ul, ol{
