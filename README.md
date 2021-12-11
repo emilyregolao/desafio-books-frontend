@@ -49,3 +49,37 @@ Senha: 12341234
 > yarn start
 >
 > Visualização em localhost:3000
+
+## Demonstração
+
+### Tela de login - mobile
+
+![Alt text](src/Assets/Screenshots/login-mobile.jpeg)
+
+### Tela de login - desktop
+
+![Alt text](src/Assets/Screenshots/login-desktop.jpeg)
+
+### Erro tela de login - mobile
+
+![Alt text](src/Assets/Screenshots/erro-login-mobile.jpeg)
+
+### Erro tela de login - desktop
+
+![Alt text](src/Assets/Screenshots/erro-login-desktop.jpeg)
+
+### Dashboard - mobile
+
+![Alt text](src/Assets/Screenshots/dashboard-mobile.jpeg)
+
+### Dashboard - desktop
+
+![Alt text](src/Assets/Screenshots/dashboard-desktop.jpeg)
+
+### Modal - mobile
+
+![Alt text](src/Assets/Screenshots/modal-mobile.jpeg)
+
+### Modal - desktop
+
+![Alt text](src/Assets/Screenshots/modal-desktop.jpeg)
